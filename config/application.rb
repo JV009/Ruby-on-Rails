@@ -21,7 +21,13 @@ module TestGuru
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = "Europe/Moscow"
     # config.eager_load_paths << Rails.root.join("extras")
+    # Where the I18n library should search for translations files
+    I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
+    # Permitted locales available for the application
+    I18n.available_locales = [:en]
+    # Set default locale to something other than :en
+    I18n.default_locale = :en
   end
 end
