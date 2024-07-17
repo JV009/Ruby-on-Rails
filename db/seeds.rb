@@ -1,9 +1,9 @@
 categories = Category.create([{title: 'Ruby'},
                               {title: 'Rails'}])
 
-users = User.create([{name: 'Alexander Popov'},
-                     {name: 'Dima Puchkov'},
-                     {name: 'Klim Zukov'}])
+users = User.create([{name: 'Alexander Popov', email: 'popov@gmail.com'},
+                     {name: 'Dima Puchkov', email: 'goblin@gmail.com'},
+                     {name: 'Klim Zukov', email: 'u_zukova@gmail.com'}])
 
 tests = Test.create([{title: 'Basic Ruby', level: 0, author_id: users[0].id, category_id: categories[0].id,},
                      {title: 'Basic Rails', level: 0, author_id: users[1].id, category_id: categories[1].id},
