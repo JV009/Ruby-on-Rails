@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
   has_many :answers
-  belong_to :test
+  belongs_to :tests
 
   validates :body, presence: true
 end
