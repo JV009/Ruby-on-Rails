@@ -1,0 +1,26 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:JV009/Ruby-on-Rails.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[branch "introductionRails"]
+	remote = origin
+	merge = refs/heads/introductionRails
+[branch "lesson_2.1"]
+	remote = origin
+	merge = refs/heads/lesson_2.1
+[branch "lesson_4"]
+	remote = origin
+	merge = refs/heads/lesson_4
+[branch "lesson_5"]
+	remote = origin
+	merge = refs/heads/lesson_5
+[branch "lesson_6"]
+	remote = origin
+	merge = refs/heads/lesson_6
