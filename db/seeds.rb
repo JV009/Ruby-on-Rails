@@ -23,3 +23,5 @@ answers = Answer.create([{body: '1995',correct: true, question_id: questions[0].
                          {body: 'Static programming language with an emphasis on speed of program execution',correct: false, question_id: questions[2].id},
                          {body: 'GitHub, Twitter, twich, Codecademy',correct: true, question_id: questions[3].id},
                          {body: 'Spotify, Google, Instgram, reddit',correct: false, question_id: questions[3].id}])
+
+test_passage = TestPassage.create([{user_id: users[0].id, test_id: tests[0].id, current_question_id: questions[0].id, correct_quesstions: 0}])
