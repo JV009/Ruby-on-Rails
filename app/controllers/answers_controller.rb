@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  
+
   before_action :find_question, only: %i[ new create ]
   before_action :set_answer, only: %i[ show edit update destroy ]
 
@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.new(answer_params)
+    @answer = @question.answre.new(answer_params)
 
     if @answer.save
       redirect_to @answer, notice: 'Answer was successfully created!'
@@ -32,7 +32,7 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    @answer.destroy!
+    @answer.destroy
     redirect_to @answer.question
   end
 

@@ -12,8 +12,9 @@
     </p>
     <% end %>
 
-  <p><%= test_passage.test.questions.index(@test_passage.current_question) + 1 %> / <%= @test_passage.test.question.count %></p>
 
+  <p><%= test_passage.number_of_question %></p>
+  
   <p><%= form.submit 'Next' %></p>
   <% end %>
 <% end %>
