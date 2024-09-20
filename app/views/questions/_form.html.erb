@@ -1,6 +1,6 @@
 <h1><%= question_header(@test, @question) %></h1>
-<%= form_with model: [@test, @question] local: true do |form| %>
-<%= render 'shared/errors', resource: @test%>
+<%= form_with model: [@test, @question] do |form| %>
+<%= render 'shared/errors', resource: @question%>
 
 <p>
   <%= form.label :body %>
@@ -8,4 +8,4 @@
 </p>
 
    <p><%= form.submit %></p>
- <% end %>
+   <% end %>

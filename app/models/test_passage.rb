@@ -29,8 +29,8 @@ class TestPassage < ApplicationRecord
   private
 
   def before_validation_set_question
-    if test.present?
-      self.current_question = test.questions.first
+    if current_question.nil?
+      self.current_question = test.questions.first if test.present?
     else
       self.current_question = next_question
     end

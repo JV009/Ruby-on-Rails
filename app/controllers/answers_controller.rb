@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = @question.answre.new(answer_params)
+    @answer = @question.answers.new(answer_params)
 
     if @answer.save
       redirect_to @answer, notice: 'Answer was successfully created!'
@@ -42,7 +42,7 @@ class AnswersController < ApplicationController
     end
 
     def answer_params
-      params.require(:answer).permt(:body, :correct)
+      params.require(:answer).permit(:body, :correct)
     end
 
     def find_question
