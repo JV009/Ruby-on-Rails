@@ -11,8 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if logged_in? %>
+      <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru</p>
+      <p class="nav user"><%= link_to "Logout", signout_path %></p>
+    <% end %>
 
+    <%= yield %>
 
     <footer>
       <p>
