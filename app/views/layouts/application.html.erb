@@ -10,11 +10,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru</p>
-      <p class="nav user"><%= link_to "Logout", signout_path %></p>
+    <% if user_signed_in? %>
+      <p class="nav user">
+        Welcome, <b><%= current_user.first_name %><%= current_user.last_name %></b> Guru |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      </p>
     <% end %>
+
+    <%= render 'shared/flash' %>
 
     <%= yield %>
 
