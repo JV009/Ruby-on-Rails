@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -10,23 +8,25 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "tests#index"
 
-  resources :tests, only: :index do
-    resources :questions, shallow: true, except: :index do
-      resources :answers, shallow: true, except: :index
-    end
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
+  resources :tests, only: :index do
     member do
       post :start
     end
   end
 
-  resource :test_passages, only: %i[ show update ] do
+  resource :test_passages, only: %i[show update] do
     member do
       get :result
     end
   end
 
   namespace :admin do
-    resources :tests
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
+    end
   end
 end
