@@ -1,0 +1,13 @@
+<h1><%= @question.test.title %> Question</h1>
+<p>
+  <strong>Body:</strong>
+  <%= @question.body %>
+</p>
+
+<h2>Answers</h2>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
+
+<%= link_to "Back", test_path(@question.test) %>

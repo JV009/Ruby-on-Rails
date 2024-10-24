@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 5a8bf5cf91217ce64938a9584ebe226608001f94 JV009 <krysov_aleksandr@mail.ru> 1720517396 +0300	branch: Created from lesson_4
+5a8bf5cf91217ce64938a9584ebe226608001f94 ceb58f100c69452e49bb8763c5f0e445519b223a JV009 <krysov_aleksandr@mail.ru> 1720517478 +0300	commit: Added associations
+ceb58f100c69452e49bb8763c5f0e445519b223a 50cb98380ce29557dd419111d2e8c4fdfb556342 JV009 <krysov_aleksandr@mail.ru> 1720548759 +0300	commit: Changed methods in user and test models
+50cb98380ce29557dd419111d2e8c4fdfb556342 4fe7c26587ff8961f6096a2f07aac8294a3592dc JV009 <krysov_aleksandr@mail.ru> 1720605315 +0300	commit: Changed methods.vol2
