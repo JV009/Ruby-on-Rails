@@ -22,12 +22,13 @@ module TestGuru
     # in config/environments, which are processed later.
     #
     config.time_zone = "Europe/Moscow"
+    #config.i18n.default_locale = :ru
     # config.eager_load_paths << Rails.root.join("extras")
     # Where the I18n library should search for translations files
     I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
     # Permitted locales available for the application
-    I18n.available_locales = [:en]
+    I18n.config.available_locales = [:en, :ru]
     # Set default locale to something other than :en
-    I18n.default_locale = :en
+    I18n.default_locale = :ru
   end
 end

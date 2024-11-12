@@ -1,0 +1,57 @@
+ru:
+  hello: "Привет мир!"
+  back: "Назад"
+  edit: "Изменить"
+  show: "Показать"
+  delete: "Удалить"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите пожалуйста"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Все тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+    test:
+      start: "Старт"
+
+  admin:
+    tests:
+      create:
+        success: "Тест был успешно создан."
+      index:
+        header: "Доступные тесты"
+        new: "Создать тест"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
+      new:
+        header: "Создать новый Тест"
+      show:
+        title: "Название"
+        level: "Уровень"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"

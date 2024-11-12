@@ -1,15 +1,15 @@
 <p>
-  <strong>Title:</strong>
+  <strong><%= t(".title") %>:</strong>
   <%= @test.title %>
 </p>
 
 <p>
-  <strong>Level:</strong>
+  <strong><%= t("level") %>:</strong>
   <%= @test.level %>
 </p>
 
   <%= render @test.questions %>
   <%= render partial: 'question/question', collection: @test.questions %>
 
-<%= link_to 'Edit', edit_admin_test_path(test) %> |
-<%= link_to 'Back', admin_test_path %>
+<%= link_to t('edit'), edit_admin_test_path(test) %> |
+<%= link_to t('back'), admin_test_path %>
