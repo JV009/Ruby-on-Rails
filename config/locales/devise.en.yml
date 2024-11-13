@@ -18,14 +18,19 @@ en:
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
+        greeting: Welcome %{recipient}!
         subject: "Confirmation instructions"
       reset_password_instructions:
+        greeting: Welcome %{recipient}!
         subject: "Reset password instructions"
       unlock_instructions:
+        greeting: Welcome %{recipient}!
         subject: "Unlock instructions"
       email_changed:
+        greeting: Welcome %{recipient}!
         subject: "Email Changed"
       password_change:
+        greeting: Welcome %{recipient}!
         subject: "Password Changed"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
@@ -45,10 +50,18 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
+      new:
+        header: "Become a Guru"
+        sign_up: "Sign up"
+        first_name: "First name"
+        last_name: "Last name"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        header: "Become a Guru"
+        enter: "Enter"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
