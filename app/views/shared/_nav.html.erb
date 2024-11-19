@@ -1,0 +1,13 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      Welcome, <%= current_user.first_name %><%= current_user.last_name %> Guru |
+      <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
+    <% else %>
+      <%= link_to "Log in", new_session_path(resource_name) %> |
+      <%= link_to "Sign up", new_registration_path(resource_name) %>
+    <% end %>
+  </span>
+</nav>

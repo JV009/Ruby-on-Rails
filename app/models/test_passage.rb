@@ -8,7 +8,7 @@ class TestPassage < ApplicationRecord
   SUCCESS_RATE = 85
 
   def complited?
-    current_question.nill?
+    current_question.nil?
   end
 
   def accept!(answer_ids)

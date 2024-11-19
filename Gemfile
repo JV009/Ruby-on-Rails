@@ -21,6 +21,8 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+gem "turbolinks"
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -30,6 +32,9 @@ gem "jbuilder"
 gem "devise"
 gem "devise-i18n"
 gem "rails-i18n"
+
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.3.3'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -61,10 +66,10 @@ group :development do
   gem 'letter_opener'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+   gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+   gem "spring"
 end
 
 group :test do
