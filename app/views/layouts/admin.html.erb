@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Admin Panel | TestGuru</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <title>Admin Panel | TestGuru</title>
 
     <%= stylesheer_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <%= render 'admin/nav' %>
-    <%= render 'shared/flash' %>
+    <div class="container">
+      <%= flash_messages %>
+      <%= yield %>
+    </div>
 
-    <%= yield %>
-    </body>
+    <footer class="footer bg-light text-center py-4">
+      <p>
+        <%= current_year %>  <%= github_url('JV009', 'Ruby-on-Rails') %> - Учебный проект в онлайн-школе <a href="https://thinknetica.com" target="_blank">Thinknetica</a>
+      </p>
+    </footer>
+  </body>
 </html>

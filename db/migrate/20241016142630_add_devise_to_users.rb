@@ -2,13 +2,6 @@
 
 class AddDeviseToUsers < ActiveRecord::Migration[7.1]
   def self.up
-    change_table :users do |t|
-      t.string   :type, default: 'User', null: false
-      t.string   :first_name
-      t.string   :last_name
-      t.index    :type
-    end
-
     remove_column(:users, :password_digest)
     change_column_default(:users, :email, '')
     remove_column(:users, :name, :string)
