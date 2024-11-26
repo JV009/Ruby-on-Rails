@@ -30,5 +30,7 @@ module TestGuru
     I18n.config.available_locales = [:en, :ru]
     # Set default locale to something other than :en
     I18n.default_locale = :ru
+
+    config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end
