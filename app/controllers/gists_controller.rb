@@ -5,7 +5,7 @@ class GistsController < ApplicationController
   def create
     result = GistQuestionService.new(@test_passage.current_question).call
 
-    flash_options = if result.success?
+    flash_options = if result.status == 201
       current_user.gists.create(question: @test_passage.current_question, url: result.html_url)
       { notice: t('.success')
     else
