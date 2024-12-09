@@ -2,7 +2,11 @@
 
 <table class= "table table-light table-striped-columns">
   <tr>
-    <th><%= t(".title") %></th>
+    <th class="sort-by-title pointer">
+      <%= t(".title") %>
+      <%= octicon 'arrow-up', class: 'text-succes hide' %>
+      <%= octicon 'arrow-down', class: 'text-succes hide' %>
+    </th>
     <th><%= t(".level") %></th>
     <th><%= t(".questions") %></th>
   </tr>
