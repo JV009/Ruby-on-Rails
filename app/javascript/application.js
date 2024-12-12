@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "./utilities/sorting"
 import "./utilities/password_icons"
+import "./utilities/form_inline"
 
 //= require jquery3
 //= require popper
