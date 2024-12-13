@@ -37,6 +37,8 @@ ru:
 
   admin:
     tests:
+      form_inline:
+        submit: "ОК"
       create:
         success: "Тест был успешно создан."
       index:
@@ -58,4 +60,4 @@ ru:
 
     services:
       gist_question_service:
-        description: "Вопрос о %{title} от TestGuru"       
+        description: "Вопрос о %{title} от TestGuru"
