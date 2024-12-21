@@ -8,8 +8,8 @@
   <%= @test.level %>
 </p>
 
+<p>
   <%= render @test.questions %>
-  <%= render partial: 'question/question', collection: @test.questions %>
+</p>
 
-<%= link_to t('edit'), edit_admin_test_path(test) %> |
-<%= link_to t('back'), admin_test_path %>
+<%= link_to t('back'), admin_tests_path %>

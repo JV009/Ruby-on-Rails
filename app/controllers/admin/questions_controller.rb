@@ -9,7 +9,7 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def new
-    @question = @test.question.new
+    @question = @test.questions.new
   end
 
   def create
@@ -33,7 +33,7 @@ class Admin::QuestionsController < Admin::BaseController
     if @question.update(question_params)
       redirect_to admin_test_path(@question.test)
     else
-        render :edit
+      render :edit
     end
   end
 

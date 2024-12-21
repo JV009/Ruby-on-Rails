@@ -7,7 +7,7 @@ module FlashHelper
   info: 'primary'
 }.freeze
 
-  def flash_message
+  def flash_messages
     flash.map do |type, message|
       content_tag(:div, message, class: "alert alert-#{TYPES_OF_ALERTS[type.to_sym]}")
     end.join.html_safe
