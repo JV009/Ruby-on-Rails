@@ -12,8 +12,8 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    if correct_answer?
-      self.correct_questions += 1
+    if correct_answer?(answer_ids)
+      self.correct_quesstions += 1
     end
     save!
   end
@@ -37,7 +37,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    !answer_ids.nil? && correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
   def correct_answers
@@ -45,6 +45,6 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.question.order(:id).where('id > ?', current_question.id).first
+    test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end
