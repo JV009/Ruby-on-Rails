@@ -1,7 +1,7 @@
 databases:
   - name: test_guru
     databaseName: test_guru_production
-    user: Alexander
+    user: sasha
     plan: free
 
 services:
