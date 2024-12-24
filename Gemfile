@@ -42,6 +42,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem "octokit"
 
 gem "octicons_helper"
+
+gem 'webpacker', '~> 5.0'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
