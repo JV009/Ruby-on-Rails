@@ -53,6 +53,9 @@ ru:
       show:
         title: "Название"
         level: "Уровень"
+      destroy:
+        success: "Тест удален."
+        cannot_destroy: "Невозможно удалить тест, так как он уже был пройден."
 
   tests_mailer:
     completed_test:

@@ -12,6 +12,10 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
+    if answer_ids.blank?
+      errors.add(:base, "Please, select answer.")
+      return false
+    end
     if correct_answer?(answer_ids)
       self.correct_quesstions += 1
     end
@@ -29,10 +33,10 @@ class TestPassage < ApplicationRecord
   private
 
   def before_validation_set_question
-    if current_question.nil?
-      self.current_question = test.questions.first if test.present?
+    if test.present? && test.questions.any?
+      self.current_question = test.questions.first if current_question.nil?
     else
-      self.current_question = next_question
+      errors.add(:base, "Sorry, this test has no questions yet.")
     end
   end
 
