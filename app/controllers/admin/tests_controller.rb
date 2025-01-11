@@ -42,8 +42,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    if @test.test_passgaes.empty? 
-      @test.destroy
+    if @test.destroy
       redirect_to admin_tests_path, notice: t(".success")
     else
       redirect_to admin_tests_path, alert: t(".cannot_destroy")
