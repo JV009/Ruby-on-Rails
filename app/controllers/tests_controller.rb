@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
 
   def index
-    @tests = Test.includes(:questions).where.not(questions: { id: nil }) || Test.includes(:answers).where.not(answers: { id: nil })
+    @tests = Test.where(visible: true)
   end
 
   def start

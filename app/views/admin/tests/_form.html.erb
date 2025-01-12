@@ -16,5 +16,10 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
+  <p>
+    <%= form.label :active %>
+    <%= form.check_box :active %>
+  </p>
+
   <p><%= form.submit %></p>
 <% end %>

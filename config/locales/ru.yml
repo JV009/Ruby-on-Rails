@@ -46,6 +46,7 @@ ru:
         new: "Создать тест"
         title: "Название"
         level: "Уровень"
+        active: "Активен"
         questions: "Вопросы"
         actions: "Действия"
       new:
