@@ -45,6 +45,7 @@ en:
           new: "New test"
           title: "Title"
           level: "Level"
+          active: "Activ"
           questions: "Questions"
           actions: "Actions"
         new:
@@ -52,6 +53,9 @@ en:
         show:
           title: "Title"
           level: "Level"
+        destroy:
+            success: "Test removed."
+            cannot_destroy: "You can't delete a test because it has already been passed."
 
 
   tests_mailer:

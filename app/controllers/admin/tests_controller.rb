@@ -42,14 +42,18 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    @test.destroy
-    redirect_to admin_tests_path
+    if @test.destroy
+      redirect_to admin_tests_path, notice: t(".success")
+    else
+      redirect_to admin_tests_path, alert: t(".cannot_destroy")
+    end
   end
+
 
 private
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :active)
   end
 
   def find_test

@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
 
   def index
-    @tests = Test.all
+    @tests = Test.where(visible: true)
   end
 
   def start

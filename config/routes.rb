@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   resources :gists, only: :create
 
+  resources :feedbacks, only: %i[new create]
+
   namespace :admin do
     resources :gists, only: :index
     resources :tests do

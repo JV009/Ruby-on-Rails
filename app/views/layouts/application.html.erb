@@ -15,7 +15,7 @@
     <%= render 'shared/nav' %>
 
     <div class="container">
-      <%= render 'shared/flash' %>
+      <%= flash_messages %>
       <%= yield %>
     </div>
 
@@ -23,6 +23,7 @@
       <p>
         <%= current_year %>  <%= github_url('JV009', 'Ruby-on-Rails') %> - Учебный проект в онлайн-школе <a href="https://thinknetica.com" target="_blank">Thinknetica</a>
       </p>
+       <div><%= link_to "Leave feedback", new_feedback_path %></div>
     </footer>
   </body>
 </html>
