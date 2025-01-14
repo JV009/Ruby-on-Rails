@@ -25,6 +25,8 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    nav:
+      badges: "Значки"
 
   tests:
     index:
@@ -36,6 +38,8 @@ ru:
       start: "Старт"
 
   admin:
+    nav:
+      badges: "Значки"
     tests:
       form_inline:
         submit: "ОК"
@@ -57,6 +61,36 @@ ru:
       destroy:
         success: "Тест удален."
         cannot_destroy: "Невозможно удалить тест, так как он уже был пройден."
+      badges:
+        success: "Значок успешно сохранен!"
+        update: "Значок был успешно обновлен!"
+        destroy: "Значок был успешно удален!"
+        admin:
+          index:
+            header: "Значки"
+            new: "Создать новый значок"
+            name: "Название значка"
+            image: "Название/путь к изображению  значка"
+            role: "Правила выдачи значка"
+            actions: "Действия"
+            edit: "Изменить"
+            delete: "Удалить"
+          new:
+            header: "Создать новый значок"
+            name: "Название значка"
+            image: "Название/путь к изображению  значка"
+            role: "Правила выдачи значка"
+            create: "Создать"
+          edit:
+            header: "Изменить значок"
+            name: "Название значка"
+            image: "Название/путь к изображению  значка"
+            role: "Правила выдачи значка"
+            update: "Изменить"
+        index:
+          header: "Значки"
+          received_badges: "Полученные значки"
+          available_badges: "Доступные значки"
 
   tests_mailer:
     completed_test:

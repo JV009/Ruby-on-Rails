@@ -24,6 +24,8 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      badges: "Badges"
 
   tests:
     index:
@@ -35,6 +37,8 @@ en:
       start: "Start"
 
     admin:
+      nav:
+        badges: "Badges" 
       tests:
         form_inline:
           submit: "ОК"
@@ -56,6 +60,36 @@ en:
         destroy:
             success: "Test removed."
             cannot_destroy: "You can't delete a test because it has already been passed."
+      badges:
+        success: "Badge saved successfully!"
+        update: "Badge was successfully updated!"
+        desroy: "Badge was successfully removed"
+        admin:
+          index:
+            header: "Badges"
+            new: "Create a new badge"
+            name: "Name"
+            image: "Name/path to icon image"
+            role: "Rules for issuing a badge"
+            actions: "Actions"
+            edit: "Edit"
+            delete: "Delete"
+          new:
+            header: "Create a new badge"
+            name: "Name"
+            image: "Name/path to icon image"
+            role: "Rules for issuing a badge"
+            create: "Create"
+          edit:
+            header: "Upadate the badge"
+            name: "Name"
+            image: "Name/path to icon image"
+            role: "Rules for issuing a badge"
+            update: "Update"
+        index:
+          header: "Badges"
+          received_badges: "Received badges"
+          available_badges: "Available badges"
 
 
   tests_mailer:

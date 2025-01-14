@@ -1,0 +1,32 @@
+<h1><% t(".header") %></h1>
+
+<p>
+  <%= link_to t(".new"), new_admin_badge_path %>
+</p>
+
+<table class="table">
+  <tr>
+    <th><%= t(".name") %></th>
+    <th><%= t(".image") %></th>
+    <th><%= t(".rule") %></th>
+    <th colspan="3"><%= t(".actions") %></th>
+  </tr>
+<tbody>
+  <% @badges.each do |badge| %>
+    <tr>
+      <td><%= badge.name %></td>
+      <td><img src="<%= badge.image %>" alt="<%= badge.name %>" width="40"></td>
+      <td><%= badge.rule %></td>
+      <td>
+        <%= link_to t(".edit"), edit_admin_badge_path(badge), class: "btn btn-primary" %>
+        <%= link_to t(".delete"), admin_badge_path(badge),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" },
+                    class: "btn btn-danger" %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+</table>

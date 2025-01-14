@@ -1,0 +1,21 @@
+<h1><%= t('.header') %></h1>
+
+<h2><%= t('.received_badges') %></h2>
+<div class="received_badges">
+  <% @badges.each do |badge| %>
+    <div class="badge">
+      <img src="<%= badge.image %>" alt="<%= badge.name %>">
+      <p><%= badge.name %></p>
+    </div>
+  <% end %>
+</div>
+
+<h2><%= t('.available_badges') %></h2>
+<div class="available-badges">
+  <% @all_badges.each do |badge| %>
+    <div class="badge">
+      <img src="<%= badge.image %>" alt="<%= badge.name %>">
+      <p><%= badge.name %></p>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,19 @@
+<h1><% t(".header") %></h1>
+
+  <p>
+    <%= form.label :name, t(".name")%>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :image, t(".image") %>
+    <%= form.number_field :image %>
+  </p>
+
+  <p>
+    <%= form.label :rule, t(".rule") %>
+    <%= form.select :rule, Badge::RULES.map { |rule| rule }, { prompt: "Select rule" }
+  </p>
+
+  <p><%= form.submit, t(".update") %></p>
+<% end %>
