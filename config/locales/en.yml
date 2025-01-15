@@ -38,7 +38,7 @@ en:
 
     admin:
       nav:
-        badges: "Badges" 
+        badges: "Badges"
       tests:
         form_inline:
           submit: "ОК"
@@ -70,10 +70,11 @@ en:
             new: "Create a new badge"
             name: "Name"
             image: "Name/path to icon image"
-            role: "Rules for issuing a badge"
+            rule: "Rules for issuing a badge"
             actions: "Actions"
             edit: "Edit"
             delete: "Delete"
+            rule_parametr: "Parametr of the rule"
           new:
             header: "Create a new badge"
             name: "Name"

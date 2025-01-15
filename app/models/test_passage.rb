@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_question, only: %i[create update]
 
+  before_update :set_successful, if: :complited?
+
   SUCCESS_RATE = 85
 
   def complited?
@@ -27,7 +29,7 @@ class TestPassage < ApplicationRecord
   end
 
   def number_of_question
-    self.test.questions.index(current_question) + 1  / test.questions.count
+    (self.test.questions.index(current_question) + 1).to_f / test.questions.count
   end
 
   private
@@ -50,5 +52,9 @@ class TestPassage < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def set_successful
+    self.successful = test_passed?
   end
 end

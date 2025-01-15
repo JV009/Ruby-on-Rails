@@ -1,48 +1,53 @@
 class BadgeService
-   attr_reader :user
+   attr_reader :user, :test_passage
 
-  def initialize(user)
+  def initialize(user, test_passage)
    @user = user
- end
+   @test_passage = test_passage
+  end
 
- def give_badges(test)
-   Badge.all.each do |badge|
-     if badge_rule_met?(badge, test)
-       award_badge(badge)
-     end
-   end
- end
+  def call
+    Badge.all.each do |badge|
+     award_badge(badge) if badge_rule_met?(badge)
+      end
+    end
+  end
 
- private
+  private
 
- def badge_rule_met?(badge, test)
-   case badge.rule
-   when 'all_ruby_tests_passed'
-     all_backend_tests_passed?(test)
-   when 'first_attempt'
-     first_attempt?(test)
-   when 'level_tests_passed'
-     level_tests_passed?(badge.level, test)
-   else
-     false
-   end
- end
+  def badge_rule_met?(badge)
+    method_name = "#{badge.rule}?"
+    if respond_to?(method_name)
+      send(method_name)
+    else
+      false
+    end
+  end
 
- def all_ruby_tests_passed?(test)
-   ruby_tests = Test.where(category: 'Ruby')
-   ruby_tests.all? { |t| user.test_passages.where(test: t).successful? }
- end
+  def all_category_of_tests_passed?(badge)
+    category = Category.find_by(title: badge.rule_parametr)
 
- def first_attempt?(test)
-   user.test_passage(test).attempts == 1
- end
+    return false unless category
 
- def level_tests_passed?(level, test)
-   level_tests = Test.where(level: level)
-   level_tests.all? { |t| user.test_passages.where(test: t).successful? }
- end
+    tests_ids = category.tests.where(status: true).pluck(:id)
+    passed_tests_ids = @user.test_passages.where(successful: true).pluck(:test_id).uniq
 
- def award_badge(badge)
-   UserBadge.create(user: user, badge: badge) unless user.badges.include?(badge)
- end
+    (tests_ids - passed_tests_ids).empty?
+  end
+
+  def first_attempt?(badge)
+    @user.test_passages.where(test_id: @test_passage.test_id).count == 1 && @test_passage.successful?
+  end
+
+  def level_tests_passed?(badge)
+    test_level = badge.rule_parametr.to_i
+    tests_by_level = Test.where(level: test_level, status: true).pluck(:id)
+    passed_tests_by_level = @user.test_passages.where(successful: true).pluck(:test_id).uniq
+
+    (tests_by_level - passed_tests_by_level).empty?
+  end
+
+  def award_badge(badge)
+    UserBadge.create(user: user, badge: badge) unless user.badges.include?(badge)
+  end
 end

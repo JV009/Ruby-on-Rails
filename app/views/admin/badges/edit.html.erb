@@ -1,19 +1,26 @@
-<h1><% t(".header") %></h1>
+<h1>Edit badge</h1>
 
-  <p>
-    <%= form.label :name, t(".name")%>
+<%= form_with model: @badge, url: admin_badges_path, local: true do |form| %>
+<%= render "shared/errors", resource: @badge %>
+  <div>
+    <%= form.label :name, "Name" %>
     <%= form.text_field :name %>
-  </p>
+  </div>
 
-  <p>
-    <%= form.label :image, t(".image") %>
-    <%= form.number_field :image %>
-  </p>
+  <div>
+    <%= form.label :image, "Image" %>
+    <%= form.text_field :image %>
+  </div>
 
-  <p>
-    <%= form.label :rule, t(".rule") %>
-    <%= form.select :rule, Badge::RULES.map { |rule| rule }, { prompt: "Select rule" }
-  </p>
+ <div>
+    <%= form.label :rule, "Rule" %>
+    <%= form.select :rule, Badge::RULES.map { |rule| rule }, { prompt: "Select rule" } %>
+  </div>
 
-  <p><%= form.submit, t(".update") %></p>
+  <div>
+  <%= form.label :rule_parametr, "Rule parametr" %>
+  <%= form.text_field :rule_parametr %>
+  </div>
+
+  <%= form.submit "Edit badge", class: 'btn btn-primary' %>
 <% end %>

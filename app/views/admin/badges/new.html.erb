@@ -17,5 +17,10 @@
     <%= form.select :rule, Badge::RULES.map { |rule| rule }, { prompt: "Select rule" } %>
   </div>
 
+  <div>
+  <%= form.label :rule_parametr, "Rule parametr" %>
+  <%= form.text_field :rule_parametr %>
+  </div>
+
   <%= form.submit "Create badge", class: 'btn btn-primary' %>
 <% end %>

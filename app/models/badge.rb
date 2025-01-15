@@ -5,8 +5,8 @@ class Badge < ApplicationRecord
   validates :name, :image, :rule, presence: true
 
   RULES = {
-  "Passing all tests from the Ruby category" => :all_ruby_tests_passed,
-  "Passing the test on the first try" => :first_attempt,
-  "Passing all tests of a certain level" => :level_completed,
-}.freeze
+    "Passing all tests from the category" => :all_category_of_tests_passed,
+    "Passing the test on the first try" => :first_attempt,
+    "Passing all tests of a certain level" => :level_tests_passed
+  }.freeze
 end
