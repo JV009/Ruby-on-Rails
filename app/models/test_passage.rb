@@ -28,8 +28,12 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count * 100).round(2) >= SUCCESS_RATE
   end
 
+  def test_passed?
+    (correct_quesstions.to_f / test.questions.count * 100).round(2) >= SUCCESS_RATE
+  end
+
   def number_of_question
-    (self.test.questions.index(current_question) + 1).to_f / test.questions.count
+     self.test.questions.index(current_question) + 1  / test.questions.count
   end
 
   private

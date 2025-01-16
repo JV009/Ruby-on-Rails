@@ -9,7 +9,6 @@ class BadgeService
   def call
     Badge.all.each do |badge|
      award_badge(badge) if badge_rule_met?(badge)
-      end
     end
   end
 
@@ -18,19 +17,18 @@ class BadgeService
   def badge_rule_met?(badge)
     method_name = "#{badge.rule}?"
     if respond_to?(method_name)
-      send(method_name)
+      send(method_name, badge)
     else
       false
     end
   end
 
   def all_category_of_tests_passed?(badge)
-    category = Category.find_by(title: badge.rule_parametr)
+    tests_ids = Test.tests_category(badge.rule_parametr)
 
-    return false unless category
+    return false if tests_ids.empty?
 
-    tests_ids = category.tests.where(status: true).pluck(:id)
-    passed_tests_ids = @user.test_passages.where(successful: true).pluck(:test_id).uniq
+    passed_tests_ids = @user.test_passages.successful.where(test_id: tests_ids).pluck(:test_id).uniq
 
     (tests_ids - passed_tests_ids).empty?
   end
@@ -41,8 +39,8 @@ class BadgeService
 
   def level_tests_passed?(badge)
     test_level = badge.rule_parametr.to_i
-    tests_by_level = Test.where(level: test_level, status: true).pluck(:id)
-    passed_tests_by_level = @user.test_passages.where(successful: true).pluck(:test_id).uniq
+    tests_by_level = @user.tests_level(test_level).pluck(:id)
+    passed_tests_by_level = @user.test_passages.successful.where(test_id: tests_by_level).pluck(:test_id).uniq
 
     (tests_by_level - passed_tests_by_level).empty?
   end
