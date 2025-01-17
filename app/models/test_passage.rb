@@ -32,6 +32,15 @@ class TestPassage < ApplicationRecord
     (self.test.questions.index(current_question) + 1).to_f / test.questions.count
   end
 
+  def remaining_time
+    end_time = created_at + test.timer.minutes
+    [0, (end_time - Time.current).to_i].max
+  end
+
+  def times_out?
+    remaining_time <= 0
+  end
+
   private
 
   def before_validation_set_question

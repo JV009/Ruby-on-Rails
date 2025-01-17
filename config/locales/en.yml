@@ -33,8 +33,13 @@ en:
       title: "Title"
       level: "Level"
       questions: "Questions"
+      timer: "Control time"
     test:
       start: "Start"
+
+    test_passages:
+      show:
+        left: "time left"
 
     admin:
       nav:
@@ -49,7 +54,8 @@ en:
           new: "New test"
           title: "Title"
           level: "Level"
-          active: "Activ"
+          active: "Active"
+          timer: "Control time"
           questions: "Questions"
           actions: "Actions"
         new:
@@ -79,7 +85,7 @@ en:
             header: "Create a new badge"
             name: "Name"
             image: "Name/path to icon image"
-            role: "Rules for issuing a badge"
+            role: "Rules for issuing a badTime ge"
             create: "Create"
           edit:
             header: "Upadate the badge"
