@@ -12,11 +12,12 @@
   <div class="progress-bar progress-bar-striped" role="progressbar"></div>
 <% end %>
 
-    <span class="timeLeft"
-      data-test-end-time="<%= Time.current.to_i + @test_passage.remaining_time %>"
+<span id="time-left"
+      data-end-time="<%= Time.current.to_i + @test_passage.remaining_time %>"
       data-redirect-url="<%= result_test_passage_path(@test_passage) %>">
-      <%= @test_passage.remaining_time %> <%= t(".left") %>
-    </span>
+  <%= @test_passage.remaining_time %> <%= t(".left") %>
+</span>
+
 <%= form_with url: test_passage_path(@test_passage),
               local: true,
               class: "testFrom",
