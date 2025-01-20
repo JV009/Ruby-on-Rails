@@ -1,11 +1,11 @@
 <h1>The <%= @test_passage.test.title %>Test was Completed!</h1>
 
 <p>
-  <%= if @test_passage.test_passed? %>
+  <% if @test_passage.test_passed? %>
     <span style="color: green;">The test was successfully passed!</span>
-  <%= else %>
+  <% else %>
     <span style="color: red;">Test failed!</span>
-  <%= end %>
+  <% end %>
 </p>
 
 <%= link_to 'Back to all tests', 'tests_path' %>

@@ -15,6 +15,15 @@ class TestPassagesController < ApplicationController
       BadgeService.new(current_user,@test_passage).call
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
+    elsif @test_passage.times_out?
+      if @test_passage.complited?
+        BadgeService.new(current_user,@test_passage).call
+        TestsMailer.completed_test(@test_passage).deliver_now
+        redirect_to result_test_passage_path(@test_passage)
+      else
+        flash.now[:alert] = "Time is out!"
+        redirect_to test_passage_path(@test_passage)
+      end
     else
       flash.now[:alert] = @test_passage.errors.full_messages.to_sentence
       redirect_to test_passage_path
